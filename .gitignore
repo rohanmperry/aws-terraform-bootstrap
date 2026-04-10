@@ -1,0 +1,4 @@
+aws-terraform-bootstrap.tfstate
+aws-terraform-bootstrap.tfstate.backup
+terraform/.terraform/
+terraform/.terraform.lock.hcl
