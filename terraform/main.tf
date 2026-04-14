@@ -104,6 +104,7 @@ data "aws_iam_policy_document" "github_actions_perms" {
       "logs:*",
       "iam:*",
       "ssm:*",
+      "ecr:*",
     ]
     resources = ["*"]
   }
