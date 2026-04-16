@@ -98,19 +98,7 @@ data "aws_iam_policy_document" "github_actions_perms" {
   statement {
     effect = "Allow"
     actions = [
-      "s3:CreateBucket",
-      "s3:DeleteBucket",
-      "s3:GetBucketPolicy",
-      "s3:PutBucketPolicy",
-      "s3:DeleteBucketPolicy",
-      "s3:GetBucketVersioning",
-      "s3:PutBucketVersioning",
-      "s3:GetBucketPublicAccessBlock",
-      "s3:PutBucketPublicAccessBlock",
-      "s3:GetObject",
-      "s3:PutObject",
-      "s3:DeleteObject",
-      "s3:ListBucket",
+      "s3:*",
     ]
     resources = [
       "arn:aws:s3:::shorten-url-frontend",
