@@ -1,4 +1,4 @@
-# ── tfstate bucket ────────────────────────────────────────────────────────────
+# tfstate bucket
 
 resource "aws_s3_bucket" "tfstate" {
   bucket = "my-projects-tfstate"
@@ -26,7 +26,7 @@ resource "aws_s3_bucket_public_access_block" "tfstate" {
   restrict_public_buckets = true
 }
 
-# ── OIDC provider ─────────────────────────────────────────────────────────────
+# OIDC provider
 
 # Note: AWS no longer validates the thumbprint for well-known OIDC providers
 # like GitHub. It uses the JWKS endpoint discovered from the issuer URL instead.
@@ -50,7 +50,7 @@ resource "aws_iam_openid_connect_provider" "github" {
   thumbprint_list = ["0000000000000000000000000000000000000000"]
 }
 
-# ── OIDC role ─────────────────────────────────────────────────────────────────
+# OIDC role
 
 data "aws_iam_policy_document" "github_assume" {
   statement {
@@ -94,6 +94,30 @@ data "aws_iam_policy_document" "github_actions_perms" {
       "${aws_s3_bucket.tfstate.arn}/*",
     ]
   }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "s3:CreateBucket",
+      "s3:DeleteBucket",
+      "s3:GetBucketPolicy",
+      "s3:PutBucketPolicy",
+      "s3:DeleteBucketPolicy",
+      "s3:GetBucketVersioning",
+      "s3:PutBucketVersioning",
+      "s3:GetBucketPublicAccessBlock",
+      "s3:PutBucketPublicAccessBlock",
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:DeleteObject",
+      "s3:ListBucket",
+    ]
+    resources = [
+      "arn:aws:s3:::shorten-url-frontend",
+      "arn:aws:s3:::shorten-url-frontend/*",
+    ]
+  }
+
   statement {
     effect = "Allow"
     actions = [
