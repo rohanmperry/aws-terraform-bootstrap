@@ -117,6 +117,7 @@ data "aws_iam_policy_document" "github_actions_perms" {
       "iam:*",
       "ssm:*",
       "ecr:*",
+      "cloudfront:*",
     ]
     resources = ["*"]
   }
