@@ -121,6 +121,19 @@ data "aws_iam_policy_document" "github_actions_perms" {
     ]
     resources = ["*"]
   }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "budgets:CreateBudget",
+      "budgets:ModifyBudget",
+      "budgets:DeleteBudget",
+      "budgets:ViewBudget",
+      "budgets:TagResource",
+    ]
+    resources = ["*"]
+  }
+
 }
 
 resource "aws_iam_role_policy" "github_actions" {
