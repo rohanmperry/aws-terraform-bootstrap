@@ -130,6 +130,7 @@ data "aws_iam_policy_document" "github_actions_perms" {
       "budgets:DeleteBudget",
       "budgets:ViewBudget",
       "budgets:TagResource",
+      "budgets:ListTagsForResource"
     ]
     resources = ["*"]
   }
