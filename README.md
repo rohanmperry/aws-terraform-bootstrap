@@ -1,3 +1,7 @@
+> **Note:** This is one of three repositories that make up the shorten-url project. 
+> Start with the [shorten-url-infra README](https://github.com/yourusername/shorten-url-infra) 
+> for a full overview and setup instructions.
+
 # aws-terraform-bootstrap
 
 Shared AWS bootstrap infrastructure for portfolio projects. Provisions the foundational 
