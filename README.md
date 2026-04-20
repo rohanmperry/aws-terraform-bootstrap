@@ -1,5 +1,5 @@
 > **Note:** This is one of three repositories that make up the shorten-url project. 
-> Start with the [shorten-url-infra README](https://github.com/yourusername/shorten-url-infra) 
+> Start with the [shorten-url-infra README](https://github.com/rohanmperry/shorten-url-infra) 
 > for a full overview and setup instructions.
 
 # aws-terraform-bootstrap
@@ -41,5 +41,5 @@ temporary credentials valid for 1 hour.
 
 ## Related projects
 
-- [shorten-url-infra](https://github.com/yourusername/shorten-url-infra) — AWS infrastructure for the URL shortener
-- [shorten-url-app](https://github.com/yourusername/shorten-url-app) — Application code for the URL shortener
+- [shorten-url-infra](https://github.com/rohanmperry/shorten-url-infra) — AWS infrastructure for the URL shortener
+- [shorten-url-app](https://github.com/rohanmperry/shorten-url-app) — Application code for the URL shortener
